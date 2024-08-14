@@ -1,0 +1,406 @@
+/* Import Poppins Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #72b01d;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700; /* Adjusted for Poppins */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #72b01d;
+    text-decoration: none;
+    font-weight: 600; /* Adjusted for Poppins */
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #0072ff;
+        width: 100%;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('/pexels-gabriel-peter-219375-696644.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 80%;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease;
+}
+
+.btn {
+    background-color: #3f7d20;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600; /* Adjusted for Poppins */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #72b01d;
+    transform: translateY(-5px);
+}
+
+/* About Section */
+.about {
+    padding: 100px 20px;
+    background-color: #2c2c2c; /* Dark Background */
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+    margin: 20px;
+    text-align: left;
+}
+
+.about-text ul {
+    list-style-type: disc;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.about-image {
+    margin: 20px;
+    border-radius: 50%; /* Ensure container is circular */
+    overflow: hidden; /* Hide overflow */
+    width: 300px; /* Set fixed width */
+    height: 300px; /* Set fixed height */
+    margin-left: 50px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the container */
+    border-radius: 50%; /* Ensure image is circular */
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.1);
+}
+
+.portfolio {
+    padding: 100px 20px;
+    background-color: #1f1f1f; /* Dark Background */
+    color: #fff;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-item h3 {
+    padding: 20px;
+    font-size: 24px;
+}
+
+.portfolio-item p {
+    padding: 0 20px 20px;
+    color: #bbb;
+}
+
+/* GitHub Link Styling */
+.github-link {
+    display: inline-block;
+    background-color: #3f7d20;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600; /* Adjusted for Poppins */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 20px 0;
+}
+
+.github-link:hover {
+    background-color: #0f9938;
+    transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .portfolio-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portfolio-item img {
+        height: auto;
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 20px;
+    background-color: #2c2c2c; /* Dark Background */
+    color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600; /* Adjusted for Poppins */
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #555;
+    color: #fff;
+}
+
+.contact textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact button {
+    background-color: #5fad56;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600; /* Adjusted for Poppins */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #1caf2d;
+    transform: translateY(-5px);
+}
+
+/* Footer Section */
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    color: #72b01d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #a0d90e; /* Slightly different shade on hover */
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px; /* Ensures consistency with the rest of the footer text */
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00ff2a;
+}
