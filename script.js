@@ -18,14 +18,14 @@ const portfolioData = [
     title: "Project 3",
     description:
       "An e-commerce platform showcasing my skills in building scalable applications and implementing payment gateways.",
-    image: "/P-3.PNG",
+    image: "/p-3.PNG",
     github: "https://healthcare-system-nqz8.vercel.app/",
   },
   {
     title: "Project 4",
     description:
       "A personal blog with a custom CMS, demonstrating my ability to create content management systems from scratch.",
-    image: "/p-4.PNG",
+    image: "/P-4.PNG",
     github: "https://github.com/AbidJunani",
   },
 ];
